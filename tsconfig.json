@@ -18,6 +18,9 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@config/*": ["src/config/*"],
+      "@domains/*": ["src/domains/*"],
+      "@hooks/*": ["src/hooks/*"],
       "@models/*": ["src/models/*"],
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],

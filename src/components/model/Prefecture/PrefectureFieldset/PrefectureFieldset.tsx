@@ -1,38 +1,51 @@
 import { css } from '@emotion/react'
-import { FC } from 'react'
+import { ChangeEvent, FC } from 'react'
 
 import { CheckBox } from '@components/common/CheckBox'
 import { Prefecture } from '@models/Prefecture'
+import { breakPoint } from '@styles/constants'
 
 type Props = {
-  prefectures: Prefecture[]
+  prefectures?: Prefecture[]
+  handleCheck: (
+    prefCode: number,
+    prefName: string
+  ) => (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-export const PrefectureFieldset: FC<Props> = ({ prefectures }) => {
-  return (
-    <fieldset css={prefectureFieldset}>
-      <legend css={prefectureLegend}>都道府県</legend>
-      <div css={prefectureLayout}>
-        {prefectures.map((prefecture) => {
-          return (
-            <CheckBox key={prefecture.prefCode} label={prefecture.prefName} />
-          )
-        })}
-      </div>
-    </fieldset>
-  )
-}
+export const PrefectureFieldset: FC<Props> = ({ prefectures, handleCheck }) => (
+  <fieldset css={prefectureFieldset}>
+    <legend css={prefectureLegend}>都道府県</legend>
+    <div css={prefectureLayout}>
+      {prefectures?.map((prefecture) => (
+        <CheckBox
+          key={prefecture.prefCode}
+          label={prefecture.prefName}
+          onChange={handleCheck(prefecture.prefCode, prefecture.prefName)}
+        />
+      ))}
+    </div>
+  </fieldset>
+)
 
 const prefectureFieldset = css`
+  padding-right: 0;
+  padding-left: 0;
   border: none;
 `
-
 const prefectureLegend = css`
-  font-size: 32px;
+  font-size: 24px;
+  text-align: center;
+  @media (min-width: ${breakPoint.sm}px) {
+    font-size: 32px;
+  }
 `
-
 const prefectureLayout = css`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 136px));
+  grid-template-columns: repeat(auto-fit, 108px);
   gap: 8px;
+  place-content: center;
+  @media (min-width: ${breakPoint.sm}px) {
+    grid-template-columns: repeat(auto-fit, 136px);
+  }
 `

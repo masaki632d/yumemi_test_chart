@@ -1,4 +1,4 @@
-import Highcharts, { SeriesOptionsType } from 'highcharts'
+import Highcharts, { SeriesOptionsType, Options } from 'highcharts'
 import HighchartsMore from 'highcharts/highcharts-more'
 import HighchartsExporting from 'highcharts/modules/exporting'
 import NoDataToDisplay from 'highcharts/modules/no-data-to-display'
@@ -16,9 +16,12 @@ export const PopulationGraph: FC<Props> = ({ data }) => {
     HighchartsMore(Highcharts)
   }
 
-  const options: Highcharts.Options = {
+  const options: Options = {
     title: {
       text: '人口遷移グラフ',
+    },
+    subtitle: {
+      text: '選択した都道府県のデータが表示されます。',
     },
     yAxis: {
       title: {
@@ -36,14 +39,18 @@ export const PopulationGraph: FC<Props> = ({ data }) => {
         x: 30,
         y: -20,
       },
-      accessibility: {
-        rangeDescription: 'Range: 1960 to 2045',
-      },
     },
     legend: {
       layout: 'vertical',
       align: 'right',
       verticalAlign: 'middle',
+    },
+    plotOptions: {
+      series: {
+        label: {
+          connectorAllowed: false,
+        },
+      },
     },
     series: data,
     responsive: {

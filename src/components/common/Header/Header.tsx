@@ -3,15 +3,13 @@ import { FC } from 'react'
 
 import { colors } from '@styles/constants'
 
-export const Header: FC = () => {
-  return (
-    <header css={header}>
-      <div css={[container, headerLayout]}>
-        <h1>RESAS Graph App</h1>
-      </div>
-    </header>
-  )
-}
+export const Header: FC = () => (
+  <header css={header}>
+    <div css={[container, headerLayout]}>
+      <h1>RESAS Graph App</h1>
+    </div>
+  </header>
+)
 
 const header = css`
   width: 100%;
