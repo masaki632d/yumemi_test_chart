@@ -1,21 +1,21 @@
 import axios from 'axios'
 import { FC, useEffect, useState } from 'react'
-import {
-  CartesianGrid,
-  Line,
-  LineChart,
-  Legend,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from 'recharts'
+// import {
+//   CartesianGrid,
+//   Line,
+//   LineChart,
+//   Legend,
+//   ResponsiveContainer,
+//   Tooltip,
+//   XAxis,
+//   YAxis,
+// } from 'recharts'
 
-import studyDataList from './studyData'
+// import studyDataList from './studyData'
 
 // import { CheckField } from '@components/HighCharts/CheckField'
 import { Graph } from '@components/HighCharts/Graph'
-import styles from '@styles/chart.module.scss'
+// import styles from '@styles/chart.module.scss'
 
 // prefectureType
 // type prefecturesProps = {
@@ -65,50 +65,50 @@ export const Chart: FC = () => {
   }, [])
 
   // チェックボックス をクリックした際の処理
-  const handleClickCheck = (
-    prefName: string,
-    prefCode: number,
-    check: boolean
-  ) => {
-    const c_prefPopulation = prefPopulation.slice()
-    // チェックをつけた処理
-    if (check) {
-      if (
-        c_prefPopulation.findIndex((value) => value.prefName === prefName) !==
-        -1
-      )
-        return
+  // const handleClickCheck = (
+  //   prefName: string,
+  //   prefCode: number,
+  //   check: boolean
+  // ) => {
+  //   const c_prefPopulation = prefPopulation.slice()
+  //   // チェックをつけた処理
+  //   if (check) {
+  //     if (
+  //       c_prefPopulation.findIndex((value) => value.prefName === prefName) !==
+  //       -1
+  //     )
+  //       return
 
-      axios
-        .get(
-          'https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?prefCode=' +
-            String(prefCode),
-          {
-            headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_RESAS_API_KEY },
-          }
-        )
-        .then((results) => {
-          c_prefPopulation.push({
-            prefName: prefName,
-            data: results.data.result.data[0].data,
-          })
+  //     axios
+  //       .get(
+  //         'https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?prefCode=' +
+  //           String(prefCode),
+  //         {
+  //           headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_RESAS_API_KEY },
+  //         }
+  //       )
+  //       .then((results) => {
+  //         c_prefPopulation.push({
+  //           prefName: prefName,
+  //           data: results.data.result.data[0].data,
+  //         })
 
-          setPrefPopulation(c_prefPopulation)
-        })
-        .catch((error) => {
-          return
-        })
-    }
-    // チェックを外した処理
-    else {
-      const deleteIndex = c_prefPopulation.findIndex(
-        (value) => value.prefName === prefName
-      )
-      if (deleteIndex === -1) return
-      c_prefPopulation.splice(deleteIndex, 1)
-      setPrefPopulation(c_prefPopulation)
-    }
-  }
+  //         setPrefPopulation(c_prefPopulation)
+  //       })
+  //       .catch((error) => {
+  //         return
+  //       })
+  //   }
+  //   // チェックを外した処理
+  //   else {
+  //     const deleteIndex = c_prefPopulation.findIndex(
+  //       (value) => value.prefName === prefName
+  //     )
+  //     if (deleteIndex === -1) return
+  //     c_prefPopulation.splice(deleteIndex, 1)
+  //     setPrefPopulation(c_prefPopulation)
+  //   }
+  // }
 
   return (
     <>
@@ -125,7 +125,7 @@ export const Chart: FC = () => {
       <h2 style={Styles.label}>人口推移グラフ</h2>
       <Graph populationdata={prefPopulation} />
 
-      <div className={styles.chart}>
+      {/* <div className={styles.chart}>
         <ResponsiveContainer>
           <LineChart
             width={700}
@@ -171,7 +171,7 @@ export const Chart: FC = () => {
             <Tooltip />
           </LineChart>
         </ResponsiveContainer>
-      </div>
+      </div> */}
     </>
   )
 }
