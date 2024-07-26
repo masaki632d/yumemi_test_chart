@@ -79,7 +79,7 @@ export const Main: FC = () => {
 
   return (
     <main>
-      <h2 style={Styles.label}>都道府県</h2>
+      <h2 style={Styles.label}>都道府県！</h2>
       {prefectures && (
         <CheckField
           prefectures={prefectures.result}
