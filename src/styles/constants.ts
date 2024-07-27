@@ -3,22 +3,10 @@ const sm = 600
 const md = 960
 const lg = 1280
 
-export const breakPoint = {
-  sm,
-  md,
-  lg,
-}
-
-// z-index
-const toast = 1400
-
-export const zIndex = {
-  toast,
-}
+export const breakPoint = { sm, md, lg }
 
 // color
-const headerBgColor = '#b7b4b4'
-
+const headerBgColor = '#777'
 const alertInfoBgColor = '#e5f6fd'
 const alertInfoColor = '#03a9f4'
 const alertErrorBgColor = '#fdeded'
@@ -31,3 +19,8 @@ export const colors = {
   alertErrorBgColor,
   alertErrorColor,
 }
+
+// z-index
+const toast = 1400
+
+export const zIndex = { toast }

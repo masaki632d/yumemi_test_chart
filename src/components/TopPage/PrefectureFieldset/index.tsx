@@ -2,7 +2,7 @@ import { ChangeEvent } from 'react'
 
 import { styles } from './style'
 
-import { CheckBox } from '@components/common/CheckBox'
+import { CheckBox } from '@components/TopPage/PrefectureFieldset/CheckBox'
 import { Prefecture } from '@models/Prefecture'
 
 type Props = {

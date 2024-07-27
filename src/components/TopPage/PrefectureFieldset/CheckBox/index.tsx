@@ -8,7 +8,7 @@ type Props = {
 }
 
 export const CheckBox = ({ label, onChange }: Props) => (
-  <label css={styles.checkBoxControl}>
+  <label data-layout="CheckBox" css={styles.checkBoxControl}>
     <input css={styles.checkBox} type="checkbox" onChange={onChange} />
     <span css={styles.labelText}>{label}</span>
   </label>

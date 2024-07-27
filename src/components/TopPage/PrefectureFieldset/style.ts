@@ -11,6 +11,8 @@ export const styles = {
   prefectureLegend: css`
     font-size: 24px;
     text-align: center;
+    margin-bottom: 20px;
+
     @media (min-width: ${breakPoint.sm}px) {
       font-size: 32px;
     }

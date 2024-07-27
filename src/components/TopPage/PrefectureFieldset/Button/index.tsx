@@ -3,5 +3,9 @@
 import { styles } from './style'
 
 export const Button = () => {
-  return <button css={styles.button}>hoge</button>
+  return (
+    <button data-layout="Button" css={styles.button}>
+      hoge
+    </button>
+  )
 }

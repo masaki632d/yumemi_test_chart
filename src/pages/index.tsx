@@ -1,9 +1,9 @@
 import Head from 'next/head'
 
-import { TopPage } from '@components/page/TopPage'
+import { TopPage } from '@components/TopPage'
 
 const Home = () => (
-  <div>
+  <>
     <Head>
       <title>RESAS Graph App</title>
       <meta
@@ -15,7 +15,7 @@ const Home = () => (
     </Head>
 
     <TopPage />
-  </div>
+  </>
 )
 
 export default Home

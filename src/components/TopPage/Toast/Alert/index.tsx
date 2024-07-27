@@ -8,6 +8,7 @@ type Props = {
 export const Alert = ({ type = 'info', children }: Props) => {
   return (
     <div
+      data-layout="Alert"
       css={[
         styles.alert,
         styles.alertLayout,

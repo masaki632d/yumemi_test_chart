@@ -2,11 +2,31 @@
 
 ## 構成
 
-- Next.js
-- TypeScript
-
+- Web Application Framework
+  - Next.js
+- UI Library
+  - React
+- Language
+  - TypeScript
 - API
   - [RESAS API](https://opendata.resas-portal.go.jp/)
+- HTTP Client (Lightweight)
+  - ky
+- Chart Library
+  - Highcharts
+- Styling
+  - Emotion
+- CSS Reset
+  - ress
+
+### Other Settings
+
+- Code Formatter
+  - prettier
+- Static Code Analysis
+  - ESLint
+- Git Hooks
+  - husky
 
 ## 環境構築
 
@@ -15,6 +35,8 @@
 
 ```bash
 $ cp .env.example .env.local
+
+NEXT_PUBLIC_RESAS_API_KEY=(取得した Key)
 ```
 
 ライブラリ の インストール
@@ -25,7 +47,7 @@ $ yarn install
 
 開発サーバ の 起動
 
-```
+```bash
 $ yarn dev
 ```
 

@@ -24,8 +24,9 @@ export const Toast = ({
   if (typeof window === 'undefined') {
     return (
       <div
-        css={[styles.toast, isOpen && styles.toastOpen]}
+        data-layout="Toast"
         data-testid="portalToast"
+        css={[styles.toast, isOpen && styles.toastOpen]}
       >
         {children}
       </div>
@@ -34,8 +35,9 @@ export const Toast = ({
 
   return createPortal(
     <div
-      css={[styles.toast, isOpen && styles.toastOpen]}
+      data-layout="Toast"
       data-testid="portalToast"
+      css={[styles.toast, isOpen && styles.toastOpen]}
     >
       {children}
     </div>,
