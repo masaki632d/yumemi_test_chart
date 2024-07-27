@@ -16,19 +16,21 @@ export type PopulationCategories = {
   }
 }
 
-const isPopulation = (arg: unknown): arg is Population => {
+export const isPopulation = (arg: unknown): arg is Population => {
   const p = arg as Population
 
   return typeof p.year === 'number' && typeof p.value === 'number'
 }
 
-const isPopulationCategory = (arg: unknown): arg is PopulationCategory => {
+export const isPopulationCategory = (
+  arg: unknown
+): arg is PopulationCategory => {
   const pc = arg as PopulationCategory
 
   return typeof pc.label === 'string' && pc.data.every((p) => isPopulation(p))
 }
 
-const isPopulationCategories = (
+export const isPopulationCategories = (
   args: unknown
 ): args is PopulationCategories => {
   const pcs = args as PopulationCategories
@@ -39,5 +41,3 @@ const isPopulationCategories = (
     pcs.result.data.every((pc) => isPopulationCategory(pc))
   )
 }
-
-export { isPopulation, isPopulationCategory, isPopulationCategories }
