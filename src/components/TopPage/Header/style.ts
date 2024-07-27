@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 
-import { colors } from '@styles/constants'
+import { breakPoint, colors } from '@styles/constants'
 
 export const styles = {
   header: css`
@@ -9,7 +9,7 @@ export const styles = {
     background-color: ${colors.headerBgColor};
   `,
   container: css`
-    max-width: 1280px;
+    max-width: ${breakPoint.lg}px;
     padding: 0 4%;
     margin: 0 auto;
   `,
@@ -17,5 +17,8 @@ export const styles = {
     display: flex;
     align-items: center;
     justify-content: center;
+  `,
+  headerSmallText: css`
+    font-size: 22px;
   `,
 }

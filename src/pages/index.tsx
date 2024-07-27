@@ -5,7 +5,7 @@ import { TopPage } from '@components/TopPage'
 const Home = () => (
   <>
     <Head>
-      <title>RESAS Graph App</title>
+      <title>RESAS Graph App - 都道府県ごとの人口遷移グラフ表示アプリ</title>
       <meta
         name="description"
         content="都道府県ごとの人口遷移グラフ表示アプリ"

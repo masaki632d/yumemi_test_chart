@@ -5,8 +5,8 @@ import { PopulationGraph } from '@components/TopPage/PopulationGraph'
 import { PrefectureFieldset } from '@components/TopPage/PrefectureFieldset'
 import { Toast } from '@components/TopPage/Toast'
 import { Alert } from '@components/TopPage/Toast/Alert'
-import usePopulation from '@hooks/usePopulation'
-import usePrefecture from '@hooks/usePrefecture'
+import { usePopulation } from '@hooks/Population/usePopulation'
+import { usePrefecture } from '@hooks/Prefecture/usePrefecture'
 
 export const TopPage = () => {
   const {

@@ -1,3 +1,5 @@
+// 使ってないが、apiの例
+
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 export type DataProps = {

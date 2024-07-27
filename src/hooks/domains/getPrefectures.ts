@@ -1,6 +1,6 @@
 import ky, { Options } from 'ky'
 
-import { DEFAULT_API_OPTIONS } from '@config/ky'
+import { DEFAULT_API_OPTIONS } from '@hooks/config/ky'
 import { Prefectures, isPrefectures } from '@models/Prefecture'
 
 const getPrefectures = async (options?: Options): Promise<Prefectures> => {
