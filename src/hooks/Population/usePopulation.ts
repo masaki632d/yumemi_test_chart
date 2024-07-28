@@ -8,7 +8,7 @@ import {
   REMOVE_POPULATION,
 } from './populationReducer'
 
-import getPopulations from '@hooks/domains/getPopulations'
+import { getPopulations } from '@hooks/domains/getPopulations'
 
 const initialState: SeriesOptionsType[] = []
 

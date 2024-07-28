@@ -12,7 +12,7 @@ type QueryParam = {
   addArea?: string
 }
 
-const getPopulations = async (
+export const getPopulations = async (
   options?: Options & { searchParams?: QueryParam }
 ): Promise<PopulationCategories> => {
   const mergedOptions = {
@@ -28,5 +28,3 @@ const getPopulations = async (
 
   return populations
 }
-
-export default getPopulations

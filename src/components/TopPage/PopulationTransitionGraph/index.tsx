@@ -8,7 +8,7 @@ type Props = {
   data: Highcharts.SeriesOptionsType[]
 }
 
-const PopulationGraph = ({ data }: Props) => {
+const PopulationTransitionGraph = ({ data }: Props) => {
   setupHighcharts()
 
   // グラフオプション に データをセット
@@ -20,4 +20,4 @@ const PopulationGraph = ({ data }: Props) => {
   return <HighchartsReact highcharts={Highcharts} options={graphOptions} />
 }
 
-export { PopulationGraph }
+export { PopulationTransitionGraph }

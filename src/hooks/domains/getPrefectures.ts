@@ -3,7 +3,9 @@ import ky, { Options } from 'ky'
 import { DEFAULT_API_OPTIONS } from '@hooks/config/ky'
 import { Prefectures, isPrefectures } from '@models/Prefecture'
 
-const getPrefectures = async (options?: Options): Promise<Prefectures> => {
+export const getPrefectures = async (
+  options?: Options
+): Promise<Prefectures> => {
   const mergedOptions = {
     ...DEFAULT_API_OPTIONS,
     ...options,
@@ -17,5 +19,3 @@ const getPrefectures = async (options?: Options): Promise<Prefectures> => {
 
   return prefectures
 }
-
-export default getPrefectures

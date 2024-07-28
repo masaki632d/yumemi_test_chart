@@ -1,7 +1,7 @@
 import { styles } from './style'
 
 import { Header } from '@components/TopPage/Header'
-import { PopulationGraph } from '@components/TopPage/PopulationGraph'
+import { PopulationTransitionGraph } from '@components/TopPage/PopulationTransitionGraph'
 import { PrefectureFieldset } from '@components/TopPage/PrefectureFieldset'
 import { Toast } from '@components/TopPage/Toast'
 import { Alert } from '@components/TopPage/Toast/Alert'
@@ -45,7 +45,7 @@ export const TopPage = () => {
                 prefectures={prefectures?.result}
                 handleCheck={handlePrefectureCheck}
               />
-              <PopulationGraph data={populations} />
+              <PopulationTransitionGraph data={populations} />
             </div>
           )
         )}
