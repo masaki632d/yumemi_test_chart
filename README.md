@@ -1,58 +1,75 @@
-# RESAS Graph App Sample
+# RESAS Graph App - 都道府県ごとの人口遷移グラフ表示アプリ
 
-## 構成
+## 作成したアプリケーション
 
-- Web Application Framework
-  - Next.js
-- UI Library
-  - React
-- Language
-  - TypeScript
-- API
-  - [RESAS API](https://opendata.resas-portal.go.jp/)
-- HTTP Client (Lightweight)
-  - ky
-- Chart Library
-  - Highcharts
-- Styling
-  - Emotion
-- CSS Reset
-  - ress
+- https://yumemi-test-chart.vercel.app/
 
-### Other Settings
+## 開発
 
-- Code Formatter
-  - prettier
-- Static Code Analysis
-  - ESLint
-- Git Hooks
-  - husky
+### 構成
 
-## 環境構築
+| カテゴリ                  | 名前                                  |
+| ------------------------- | ------------------------------------- |
+| Web Application Framework | Next.js                               |
+| UI Library                | React                                 |
+| Programming Language      | TypeScript                            |
+| Chart Library             | Highcharts                            |
+| Styling                   | Emotion                               |
+| CSS Reset                 | ress                                  |
+| HTTP Client               | ky (軽量)                             |
+| Format                    | ESLint, Prettier, lint-staged(+husky) |
+| Package Manager           | Yarn                                  |
+| Deploy                    | Vercel                                |
+
+### 環境構築
+
+#### RESAS API から API Key を取得
 
 - RESAS API に登録し、API Key の取得が必要
-- .env.example をコピーし、.env.local に取得した Key をセットする（初回のみ）
+- .env.example をコピー
 
 ```bash
 $ cp .env.example .env.local
-
-NEXT_PUBLIC_RESAS_API_KEY=(取得した Key)
 ```
 
-ライブラリ の インストール
+- .env.local に、取得した API Key をセットする
+
+```bash
+NEXT_PUBLIC_RESAS_API_KEY=(取得した API Key)
+```
+
+#### ライブラリ の インストール
 
 ```bash
 $ yarn install
 ```
 
-開発サーバ の 起動
+#### 開発サーバ の 起動
 
 ```bash
 $ yarn dev
 ```
 
-ブラウザ で 表示確認
+#### ブラウザ で 表示確認
 
+- localhost:3000
+
+#### フォーマット
+
+```bash
+$ yarn formt
 ```
-localhost:3000
+
+## 本番環境
+
+### Vercel でデプロイする場合
+
+- デプロイ時の画面で、環境変数 として API Key を登録する手順 がスムーズ。
+- デプロイ後に設定する場合は、Settings > Environment Variables から、
+- env.local で設定していた Key / Value を追加
+- この設定だけでは反映されないので、再デプロイ（commit/push でも可）する必要あり
+
+```bash
+Key：NEXT_PUBLIC_RESAS_API_KEY
+Value：(取得した API Key)
 ```
