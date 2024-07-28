@@ -19,7 +19,7 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@models/*": ["src/models/*"],
+      "@models/*": ["src/utils/*"],
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
       "@stories/*": ["src/stories/*"],

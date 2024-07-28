@@ -1,6 +1,6 @@
 // API呼び出し
-import { getPrefectures } from '@hooks/domains/getPrefectures'
-import { Prefectures } from '@models/Prefecture'
+import { getPrefectures } from 'src/api/getPrefectures'
+import { Prefectures } from 'src/utils/Prefecture/Prefecture'
 
 export const fetchPrefectures = async (): Promise<Prefectures> => {
   const data = await getPrefectures()

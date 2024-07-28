@@ -6,6 +6,7 @@ export const styles = {
   checkBoxControl: css`
     display: flex;
     align-items: center;
+    cursor: pointer;
   `,
   checkBox: css`
     width: 18px;

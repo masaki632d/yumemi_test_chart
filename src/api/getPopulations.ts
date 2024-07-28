@@ -1,10 +1,10 @@
 import ky, { Options } from 'ky'
 
-import { DEFAULT_API_OPTIONS } from '@hooks/config/ky'
+import { DEFAULT_API_OPTIONS } from 'src/api/config/ky'
 import {
   PopulationCategories,
   isPopulationCategories,
-} from '@models/Population'
+} from 'src/utils/Population/Population'
 
 type QueryParam = {
   prefCode: number

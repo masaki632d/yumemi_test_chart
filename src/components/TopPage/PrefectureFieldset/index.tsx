@@ -3,7 +3,7 @@ import { ChangeEvent } from 'react'
 import { styles } from './style'
 
 import { CheckBox } from '@components/TopPage/PrefectureFieldset/CheckBox'
-import { Prefecture } from '@models/Prefecture'
+import { Prefecture } from 'src/utils/Prefecture/Prefecture'
 
 type Props = {
   prefectures?: Prefecture[]
@@ -15,7 +15,7 @@ type Props = {
 
 export const PrefectureFieldset = ({ prefectures, handleCheck }: Props) => {
   return (
-    <fieldset css={styles.prefectureFieldset}>
+    <fieldset data-layout="PrefectureFieldset" css={styles.prefectureFieldset}>
       <legend css={styles.prefectureLegend}>都道府県</legend>
 
       <div css={styles.prefectureLayout}>

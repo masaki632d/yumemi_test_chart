@@ -1,6 +1,6 @@
 import { SeriesOptionsType } from 'highcharts'
 
-import { PopulationCategory } from '@models/Population'
+import { PopulationCategory } from 'src/utils/Population/Population'
 
 export const ADD_POPULATION = 'ADD_POPULATION'
 export const REMOVE_POPULATION = 'REMOVE_POPULATION'

@@ -20,7 +20,7 @@ export const Toast = ({
     setTimeout(onClose, autoHideDuration)
   }
 
-  // クライアント側 の処理になるので、Next.js でのサーバ側 では ポータル を使わないようにする
+  // クライアント側 の処理になるので、Next.js でのサーバー側 では ポータル を使わないようにする
   if (typeof window === 'undefined') {
     return (
       <div
